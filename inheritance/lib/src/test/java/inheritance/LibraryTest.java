@@ -7,13 +7,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void restaurantClassConstructorWorks() {
+    @Test void restaurantToStringWorks() {
         Restaurant classUnderTest = new Restaurant(4, "$$", "Da Riccardi");
-        assertTrue(classUnderTest instanceof Restaurant, "restaurantClassConstructorWorks should return true.");
+        String correctOutput = "Da Riccardi\nprice:$$\nStars:4";
+        assert(classUnderTest.toString().equals(correctOutput));
     }
-    @Test void reviewClassConstructorWorks() {
+    @Test void reviewToStringWorks() {
         Review classUnderTest = new Review(2, "Jeff", "solidly meh");
-        assertTrue(classUnderTest instanceof Review, "restaurantClassConstructorWorks should return true.");
+        String correctOutput = "Author:Jeff\n" +
+                "Stars:2\n" +
+                "solidly meh";
+      assert(classUnderTest.toString().equals(correctOutput));
     }
     @Test void reviewIsAssociatedWithRestaurant() {
         Restaurant classUnderTest = new Restaurant(3, "$$$$", "Il SopraVValutato");

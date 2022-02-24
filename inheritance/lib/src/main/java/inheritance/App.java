@@ -6,9 +6,7 @@ package inheritance;
 public class App {
 
     public static void main(String[] args) {
-        Restaurant ilExpensivo = new Restaurant(4, "$$$$", "Il Expensivo");
-        Review firstReview = new Review(2, "Francois", "c'etait plutot mediocre.");
-        ilExpensivo.addReview(firstReview);
+
     }
 
 }
