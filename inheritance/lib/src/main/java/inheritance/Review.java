@@ -11,6 +11,11 @@ public class Review {
         this.body = body;
     }
 
+    public String toString() {
+        String printout = "Author:" + this.author + "\n" + "Stars:" + this.stars + "\n" + this.body;
+        return printout;
+    }
+
     public void modifyReview(int newStars, String newBody)
     {
         this.stars = newStars;

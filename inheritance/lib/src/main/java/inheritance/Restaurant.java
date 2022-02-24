@@ -14,17 +14,22 @@ public class Restaurant {
         this.name = name;
     }
 
-     String addReview(Review review) {
+    public String toString() {
+        String printout = this.name + "\n" + "price:" + this.price + "\n" + "Stars:" + this.stars;
+        return printout;
+    }
+
+    public String addReview(Review review) {
         if (!this.reviews.contains(review)) {
             this.reviews.add(review);
-            this.updateRating(review);
+            this.updateRating();
             return "Review added!";
         } else {
             return "Cannot add review: review already exists.";
         }
     }
 
-    public void updateRating(Review review) {
+    public void updateRating() {
         int sumStars = 0;
         for (Review el : this.reviews) {
             sumStars += el.stars;
