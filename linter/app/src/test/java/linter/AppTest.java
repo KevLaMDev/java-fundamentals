@@ -11,4 +11,8 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+    @Test void linterTest() {
+        App classUnderTest = new App();
+        System.out.println(classUnderTest.linter("C:\\Users\\Kevin LaMarca\\Documents\\401 Java\\java-fundamentals\\linter\\app\\src\\linterTest.js"));
+    }
 }

@@ -16,13 +16,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(linter());
-
+        System.out.println(linter("C:\\Users\\Kevin LaMarca\\Documents\\401 Java\\java-fundamentals\\linter\\app\\src\\gates.js"));
     }
 
-    public static String linter() {
+    public static String linter(String path) {
         Scanner scanner = null;
-        Path filePath = Paths.get("C:\\Users\\Kevin LaMarca\\Documents\\401 Java\\java-fundamentals\\linter\\app\\src\\gates.js");
+        Path filePath = Paths.get(path);
         try {
             scanner = new Scanner(filePath);
         } catch(IOException err) {
@@ -33,11 +32,13 @@ public class App {
         int counter = 1;
         while(scanner.hasNextLine()) {
             String currentLine = scanner.nextLine();
-            System.out.println(currentLine);
-            if (currentLine != " ") {
-                if (!currentLine.endsWith("}") || !currentLine.contains("if") || !currentLine.contains("else") || !currentLine.contains("{")) {
-                    if (returnMsg.length() == 0) returnMsg += "Line " + counter + ": Missing semicolon.";
-                    else returnMsg += "\nLine " + counter + ": Missing semicolon.";
+            if (currentLine != "") {
+                if (currentLine.contains("if") || currentLine.contains("else") || currentLine.endsWith("{") || currentLine.endsWith("}")) {
+                } else {
+                    if (!currentLine.endsWith(";")) {
+                        if (returnMsg.length() == 0) returnMsg += "Line " + counter + ": Missing semicolon.";
+                        else returnMsg += "\nLine " + counter + ": Missing semicolon.";
+                    }
                 }
             }
             counter++;
