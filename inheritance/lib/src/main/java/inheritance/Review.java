@@ -12,7 +12,7 @@ public class Review {
     }
 
     public String toString() {
-        String printout = "Author:" + this.author + "\n" + "Stars:" + this.stars + "\n" + this.body;
+        String printout = "Author:" + this.author + "\n" + "Stars:" + this.stars + "\n" + "Body:" + this.body;
         return printout;
     }
 
